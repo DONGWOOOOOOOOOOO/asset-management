@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사무실 자산관리</title>
+<link rel="stylesheet" href="style.css">
+<style>
+[hidden] {
+  display: none !important;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: #f3f5f8;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+.login-card h1 {
+  margin: 10px 0;
+  font-size: 25px;
+}
+
+.login-card p {
+  color: #64748b;
+}
+
+.login-card label {
+  display: block;
+  margin: 18px 0 7px;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+#loginError {
+  color: #dc2626;
+  font-size: 13px;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<section id="loginPage" class="login-page" hidden>
+  <div class="login-card">
+    <div class="eyebrow">OFFICE OPERATIONS</div>
+    <h1>관리자 로그인</h1>
+    <p>관리자 계정으로 로그인하세요.</p>
+
+    <form id="adminLoginForm">
+      <label for="adminEmail">이메일</label>
+      <input
+        id="adminEmail"
+        type="email"
+        placeholder="관리자 이메일"
+        autocomplete="username"
+        required
+      >
+
+      <label for="adminPassword">비밀번호</label>
+      <input
+        id="adminPassword"
+        type="password"
+        placeholder="비밀번호"
+        autocomplete="current-password"
+        required
+      >
+
+      <button type="submit" id="adminLoginBtn" class="btn primary">
+        로그인
+      </button>
+
+      <button type="button" id="cancelLoginBtn" class="btn secondary">
+        일반 사용자 화면으로 돌아가기
+      </button>
+
+      <p id="loginError" role="alert"></p>
+    </form>
+  </div>
+</section>
+<div id="appShell">
+  <header class="topbar">
+    <div class="topbar-identity">
+      <span class="mobile-brand-mark" aria-hidden="true">▣</span>
+      <div class="topbar-title">자산관리 시스템 <small>OFFICE ASSET MANAGER</small></div>
+    </div>
+    <div class="topbar-right">
+      <span id="connection" class="pill">연결 확인 중</span>
+      <button id="registerNameBtn" class="btn secondary" hidden>이름 등록</button>
+      <button id="adminLoginOpen" class="btn secondary">관리자 로그인</button>
+      <button id="adminLogoutBtn" class="btn secondary" hidden>관리자 로그아웃</button>
+    </div>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="자산관리 메뉴">
+      <div class="side-brand"><span class="brand-symbol" aria-hidden="true">◈</span><span>자산관리 시스템<small>ASSET MANAGEMENT</small></span></div>
+      <div class="side-caption">WORKSPACE</div>
+      <nav id="tabs" aria-label="주요 메뉴">
+        <button class="tab active" data-tab="assets"><span class="nav-icon" aria-hidden="true">▤</span>자산대장</button>
+        <button class="tab" data-tab="requests"><span class="nav-icon" aria-hidden="true">▧</span>자산신청</button>
+        <button class="tab" data-tab="checkouts"><span class="nav-icon" aria-hidden="true">⇥</span>자산반출·반납</button>
+        <button class="tab" data-tab="history" id="historyTab" hidden><span class="nav-icon" aria-hidden="true">◷</span>수정 이력</button>
+        <button class="tab" data-tab="users" id="usersTab" hidden><span class="nav-icon" aria-hidden="true">♙</span>사용자 관리</button>
+      </nav>
+      <div class="side-bottom"><span class="side-live-dot"></span> Supabase 실시간 연동</div>
+    </aside>
+    <main class="wrap">
+      <div class="page-heading"><div><div class="eyebrow">OVERVIEW</div><h1>자산 관리 대시보드</h1><p>사무실 자산 현황을 한눈에 확인하고 효율적으로 관리하세요.</p></div><div class="heading-chip">OFFICE OPERATIONS</div></div>
+      <section class="summary" id="summary" aria-label="자산 현황"></section>
+      <section class="panel">
+        <div class="panel-heading"><div><div class="eyebrow">ASSET MANAGEMENT</div><h2>자산 관리 목록</h2></div><div class="top-actions"><button id="exportBtn" class="btn secondary">↓ 엑셀 다운로드</button><label class="btn secondary filebtn" id="importLabel">↑ 엑셀 업로드<input id="importFile" type="file" accept=".xlsx,.xls,.csv"></label></div></div>
+        <div class="toolbar"><div class="tools"><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" aria-label="자산 검색" placeholder="자산명 · 번호 · 담당자 검색"></div><button id="addBtn" class="btn primary">＋ 신규 등록</button></div></div>
+        <div id="notice" class="notice">Supabase 연결 정보를 설정하면 여러 기기에서 실시간 공동 편집할 수 있습니다.</div>
+        <div id="tableArea" class="table-area"><div class="empty">초기 화면을 준비하고 있습니다.</div></div>
+      </section>
+      <section class="footnote"><b>사용 안내</b><span>변경 내용은 자동 저장됩니다. 사용자 접근 권한은 데이터베이스 정책으로도 확인됩니다.</span></section>
+    </main>
+  </div>
+</div>
+<dialog id="editDialog"><form method="dialog" id="editForm"><div class="dialog-head"><h2 id="dialogTitle">정보 입력</h2><button type="button" id="editClose" class="x" aria-label="닫기">×</button></div><div id="formFields" class="form-grid"></div><div class="dialog-actions"><button type="button" id="editCancel" class="btn secondary">취소</button><button id="saveDialog" class="btn primary" value="default">저장</button></div></form></dialog>
+<dialog id="nameDialog"><form method="dialog"><h2>사용자 표시 이름</h2><p class="muted">수정 이력에 표시할 이름을 입력하세요. 현재 로그인 방식은 익명 로그인입니다.</p><input id="displayName" maxlength="40" placeholder="예: 홍길동" required><div class="dialog-actions"><button type="button" id="nameClose" class="btn secondary">닫기</button><button id="nameSave" class="btn primary" value="default">확인</button></div></form></dialog>
+<script src="app.js"></script>
+</body></html>

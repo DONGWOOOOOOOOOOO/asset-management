@@ -1,0 +1,1033 @@
+{
+  "assets": [
+    {
+      "asset_no": "AS-001",
+      "asset_name": "레이저 레벨기 (JL-4DP)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / S/N: R-R-hw5-JL-4DP"
+    },
+    {
+      "asset_no": "AS-002",
+      "asset_name": "레이저 레벨기 (JL-4DP)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / S/N: 미확인"
+    },
+    {
+      "asset_no": "AS-003",
+      "asset_name": "워크스테이션(CPU) (인텔 코어i7-14세대 14700K)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-004",
+      "asset_name": "워크스테이션(쿨러) (NZXT KRAKEN 360)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-005",
+      "asset_name": "워크스테이션(메인보드) (GIGABYTE Z790 AORUS ELITE)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-006",
+      "asset_name": "워크스테이션(RAM) (마이크론 DDR5-5600 16GB*2)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-007",
+      "asset_name": "워크스테이션(RAM) (마이크론 DDR5-5600 32GB*2)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-008",
+      "asset_name": "워크스테이션(HDD) (씨게이트 바라쿠다 3.5인치 1TB*2)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-009",
+      "asset_name": "워크스테이션(파워) (에너맥스 REVOLUTION D.F. X ERT850EWT 80PLUS골드 풀모듈러 ATX3.0)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-010",
+      "asset_name": "워크스테이션(케이스) (앱코 SUITMASTER M2000 NOVA ARGB 강화유리(블랙))",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-011",
+      "asset_name": "모니터 27인치 (27MR400)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 삼성 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-012",
+      "asset_name": "마우스, 키보드 (MS 스컬프트 컴포트 무선 키보드 마우스 세트)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 서버용 / 제조사: 마이크로소프트 / C2 SMCS 서버용"
+    },
+    {
+      "asset_no": "AS-013",
+      "asset_name": "카메라 (ST55)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 사진 촬영 / 제조사: 삼성 / S/N: 8118C90B600948L / 중고"
+    },
+    {
+      "asset_no": "AS-014",
+      "asset_name": "카메라 (PL150)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 사진 촬영 / 제조사: 삼성 / S/N: 133YC90ZB0260E / 중고"
+    },
+    {
+      "asset_no": "AS-015",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "asset_no": "AS-016",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "asset_no": "AS-017",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "asset_no": "AS-018",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "asset_no": "AS-019",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 23.05"
+    },
+    {
+      "asset_no": "AS-020",
+      "asset_name": "전동 드라이버 (DCD709 KR01)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt"
+    },
+    {
+      "asset_no": "AS-021",
+      "asset_name": "전동 드라이버 충전기 (DCB1104)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt"
+    },
+    {
+      "asset_no": "AS-022",
+      "asset_name": "전동 드라이버 배터리 (DCBP034)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt / S/N: NA130069 B1BD6I8"
+    },
+    {
+      "asset_no": "AS-023",
+      "asset_name": "전동 드라이버 배터리 (DCBP034)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt / S/N: NA130069 B1BD6I5 / 02 25 -> 평택에 임시 보관"
+    },
+    {
+      "asset_no": "AS-024",
+      "asset_name": "십자 드라이버",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 기타 작업용 / 5개"
+    },
+    {
+      "asset_no": "AS-025",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.05"
+    },
+    {
+      "asset_no": "AS-026",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.05"
+    },
+    {
+      "asset_no": "AS-027",
+      "asset_name": "방진 가방",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인 / 낡으면 새거 쓸 것 -> 1 / 2"
+    },
+    {
+      "asset_no": "AS-028",
+      "asset_name": "SOP현황판",
+      "manager": "김용민",
+      "location": "평택",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인"
+    },
+    {
+      "asset_no": "AS-029",
+      "asset_name": "SOP현황판",
+      "manager": "김용민",
+      "location": "SAC",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인 / 평택 SAC에 보관"
+    },
+    {
+      "asset_no": "AS-030",
+      "asset_name": "SOP현황판",
+      "manager": "김용민",
+      "location": "평택",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인"
+    },
+    {
+      "asset_no": "AS-031",
+      "asset_name": "식별띠 : 기흥방재환경그룹",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인 / 남은 개수 : 10 / 10"
+    },
+    {
+      "asset_no": "AS-032",
+      "asset_name": "식별띠 : 화성방재그룹",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인 / 남은 개수 : 10 / 10"
+    },
+    {
+      "asset_no": "AS-033",
+      "asset_name": "C To RJ45 젠더",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: SD 세팅 / 개수 : 4/4"
+    },
+    {
+      "asset_no": "AS-034",
+      "asset_name": "NAS (2bay : 2TB x2) (DS223)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: i-PLC 프로그램 보관 / 제조사: Synology / S/N: SN : 2530V1R1ZP2VA / MAC : 90 09 D0 83 2B 97 / Gitea / 포트포워딩 및 외부 연결 완료"
+    },
+    {
+      "asset_no": "AS-035",
+      "asset_name": "네트워크 스위치 허브 (IPTIME SG16A-Mini 기가비트)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 네트워크 스위치 허브 / 제조사: IPTIME / 굿어스 개발진 허브"
+    },
+    {
+      "asset_no": "AS-036",
+      "asset_name": "+-드라이버(대)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 4개 -> 1개 여분"
+    },
+    {
+      "asset_no": "AS-037",
+      "asset_name": "정밀 +드라이버",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 5개 -> 1개 여분"
+    },
+    {
+      "asset_no": "AS-038",
+      "asset_name": "정밀 -드라이버",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 4개 -> 1개 여분"
+    },
+    {
+      "asset_no": "AS-039",
+      "asset_name": "다목적 가위",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 3개 -> 1개 여분"
+    },
+    {
+      "asset_no": "AS-040",
+      "asset_name": "손전등",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 3개 -> 1개 여분"
+    },
+    {
+      "asset_no": "AS-041",
+      "asset_name": "활선경보기 (HXW-6W)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "asset_no": "AS-042",
+      "asset_name": "활선접근경보기 (TK-808A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "asset_no": "AS-043",
+      "asset_name": "안전담당자 완장",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "asset_no": "AS-044",
+      "asset_name": "활선접근경보기 (TK-808A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 2개"
+    },
+    {
+      "asset_no": "AS-045",
+      "asset_name": "활선경보기 (HXW-6W)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "asset_no": "AS-046",
+      "asset_name": "스마트 드라이버 노드 (RDS-DRV-1)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 테스트 장비 / 제조사: SYSWIN / S/N: SW-SD-2025102301"
+    },
+    {
+      "asset_no": "AS-047",
+      "asset_name": "스마트 드라이버 IO48포트 (RDS-IO48B-1)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 테스트 장비 / 제조사: SYSWIN / S/N: SW-IO48-2025102801"
+    },
+    {
+      "asset_no": "AS-048",
+      "asset_name": "가스트론 가스 감지기 (GTD-5000)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 테스트 장비 / 제조사: 가스트론 / S/N: AOGK2211296"
+    },
+    {
+      "asset_no": "AS-049",
+      "asset_name": "가스트론 가스 감지기 (GTD-5000)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 테스트 장비 / 제조사: 가스트론 / S/N: AOGK2211294"
+    },
+    {
+      "asset_no": "AS-050",
+      "asset_name": "GDS 가스 감지기 (ASGD-S)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 테스트 장비 / 제조사: GDS / S/N: ORG.0091"
+    },
+    {
+      "asset_no": "AS-051",
+      "asset_name": "GDS 가스 감지기 (ASGD-S)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 테스트 장비 / 제조사: GDS / S/N: ORG-0466"
+    },
+    {
+      "asset_no": "AS-052",
+      "asset_name": "클린용지",
+      "manager": "",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "10묶음"
+    },
+    {
+      "asset_no": "AS-053",
+      "asset_name": "SOP현황판",
+      "manager": "",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용"
+    },
+    {
+      "asset_no": "AS-054",
+      "asset_name": "SOP현황판",
+      "manager": "",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 작업용"
+    },
+    {
+      "asset_no": "AS-055",
+      "asset_name": "식별띠 : 평택 방재그룹 (5061~5070)",
+      "manager": "강동우",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인 / 10묶음"
+    },
+    {
+      "asset_no": "AS-056",
+      "asset_name": "식별띠 : 평택 건설그룹 (5001~5010)",
+      "manager": "강동우",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인 / 10묶음"
+    },
+    {
+      "asset_no": "AS-057",
+      "asset_name": "제전가방(백팩형)",
+      "manager": "강동우",
+      "location": "망포사무실",
+      "status": "보관중",
+      "borrower": "",
+      "checkout_date": "",
+      "notes": "용도: 삼성 라인 / 2ea (1개사용_강동우)"
+    }
+  ],
+  "requests": [
+    {
+      "request_no": "REQ-001",
+      "request_date": "2024-07-18T00:00:00",
+      "asset_name": "레이저 레벨기 (JL-4DP)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / S/N: R-R-hw5-JL-4DP"
+    },
+    {
+      "request_no": "REQ-002",
+      "request_date": "2024-07-18T00:00:00",
+      "asset_name": "레이저 레벨기 (JL-4DP)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / S/N: 미확인"
+    },
+    {
+      "request_no": "REQ-003",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "워크스테이션(CPU) (인텔 코어i7-14세대 14700K)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-004",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "워크스테이션(쿨러) (NZXT KRAKEN 360)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-005",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "워크스테이션(메인보드) (GIGABYTE Z790 AORUS ELITE)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-006",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "워크스테이션(RAM) (마이크론 DDR5-5600 16GB*2)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-007",
+      "request_date": "",
+      "asset_name": "워크스테이션(RAM) (마이크론 DDR5-5600 32GB*2)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-008",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "워크스테이션(HDD) (씨게이트 바라쿠다 3.5인치 1TB*2)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-009",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "워크스테이션(파워) (에너맥스 REVOLUTION D.F. X ERT850EWT 80PLUS골드 풀모듈러 ATX3.0)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-010",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "워크스테이션(케이스) (앱코 SUITMASTER M2000 NOVA ARGB 강화유리(블랙))",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 조립 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-011",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "모니터 27인치 (27MR400)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 삼성 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-012",
+      "request_date": "2024-08-28T00:00:00",
+      "asset_name": "마우스, 키보드 (MS 스컬프트 컴포트 무선 키보드 마우스 세트)",
+      "manager": "김용민",
+      "location": "천안 C2",
+      "notes": "용도: 서버용 / 제조사: 마이크로소프트 / C2 SMCS 서버용"
+    },
+    {
+      "request_no": "REQ-013",
+      "request_date": "2024-11-08T00:00:00",
+      "asset_name": "카메라 (ST55)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 사진 촬영 / 제조사: 삼성 / S/N: 8118C90B600948L / 중고"
+    },
+    {
+      "request_no": "REQ-014",
+      "request_date": "2024-11-08T00:00:00",
+      "asset_name": "카메라 (PL150)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 사진 촬영 / 제조사: 삼성 / S/N: 133YC90ZB0260E / 중고"
+    },
+    {
+      "request_no": "REQ-015",
+      "request_date": "2024-11-21T00:00:00",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "request_no": "REQ-016",
+      "request_date": "2024-11-21T00:00:00",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "request_no": "REQ-017",
+      "request_date": "2024-11-21T00:00:00",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "request_no": "REQ-018",
+      "request_date": "2024-11-21T00:00:00",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.08"
+    },
+    {
+      "request_no": "REQ-019",
+      "request_date": "2024-07-18T00:00:00",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 23.05"
+    },
+    {
+      "request_no": "REQ-020",
+      "request_date": "2024-11-26T00:00:00",
+      "asset_name": "전동 드라이버 (DCD709 KR01)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt"
+    },
+    {
+      "request_no": "REQ-021",
+      "request_date": "2024-11-26T00:00:00",
+      "asset_name": "전동 드라이버 충전기 (DCB1104)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt"
+    },
+    {
+      "request_no": "REQ-022",
+      "request_date": "2024-11-26T00:00:00",
+      "asset_name": "전동 드라이버 배터리 (DCBP034)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt / S/N: NA130069 B1BD6I8"
+    },
+    {
+      "request_no": "REQ-023",
+      "request_date": "2024-11-26T00:00:00",
+      "asset_name": "전동 드라이버 배터리 (DCBP034)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 모듈 이동설치용 / 제조사: Dewalt / S/N: NA130069 B1BD6I5 / 02 25 -> 평택에 임시 보관"
+    },
+    {
+      "request_no": "REQ-024",
+      "request_date": "2024-12-09T00:00:00",
+      "asset_name": "십자 드라이버",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 기타 작업용 / 5개"
+    },
+    {
+      "request_no": "REQ-025",
+      "request_date": "2024-12-19T00:00:00",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.05"
+    },
+    {
+      "request_no": "REQ-026",
+      "request_date": "2024-12-19T00:00:00",
+      "asset_name": "레이저 레벨기 충전식 배터리 (XU102494-21002A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 정위치 측정용 / 제조사: 쥬피터 / 제조년월 24.05"
+    },
+    {
+      "request_no": "REQ-027",
+      "request_date": "2025-02-03T00:00:00",
+      "asset_name": "방진 가방",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 삼성 라인 / 낡으면 새거 쓸 것 -> 1 / 2"
+    },
+    {
+      "request_no": "REQ-028",
+      "request_date": "2025-02-14T00:00:00",
+      "asset_name": "SOP현황판",
+      "manager": "김용민",
+      "location": "평택",
+      "notes": "용도: 삼성 라인"
+    },
+    {
+      "request_no": "REQ-029",
+      "request_date": "2025-02-14T00:00:00",
+      "asset_name": "SOP현황판",
+      "manager": "김용민",
+      "location": "SAC",
+      "notes": "용도: 삼성 라인 / 평택 SAC에 보관"
+    },
+    {
+      "request_no": "REQ-030",
+      "request_date": "2025-02-14T00:00:00",
+      "asset_name": "SOP현황판",
+      "manager": "김용민",
+      "location": "평택",
+      "notes": "용도: 삼성 라인"
+    },
+    {
+      "request_no": "REQ-031",
+      "request_date": "2025-02-14T00:00:00",
+      "asset_name": "식별띠 : 기흥방재환경그룹",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 삼성 라인 / 남은 개수 : 10 / 10"
+    },
+    {
+      "request_no": "REQ-032",
+      "request_date": "2025-02-14T00:00:00",
+      "asset_name": "식별띠 : 화성방재그룹",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 삼성 라인 / 남은 개수 : 10 / 10"
+    },
+    {
+      "request_no": "REQ-033",
+      "request_date": "2025-03-31T00:00:00",
+      "asset_name": "C To RJ45 젠더",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: SD 세팅 / 개수 : 4/4"
+    },
+    {
+      "request_no": "REQ-034",
+      "request_date": "2025-06-23T00:00:00",
+      "asset_name": "NAS (2bay : 2TB x2) (DS223)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: i-PLC 프로그램 보관 / 제조사: Synology / S/N: SN : 2530V1R1ZP2VA / MAC : 90 09 D0 83 2B 97 / Gitea / 포트포워딩 및 외부 연결 완료"
+    },
+    {
+      "request_no": "REQ-035",
+      "request_date": "2025-08-20T00:00:00",
+      "asset_name": "네트워크 스위치 허브 (IPTIME SG16A-Mini 기가비트)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 네트워크 스위치 허브 / 제조사: IPTIME / 굿어스 개발진 허브"
+    },
+    {
+      "request_no": "REQ-036",
+      "request_date": "2025-09-25T00:00:00",
+      "asset_name": "+-드라이버(대)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 4개 -> 1개 여분"
+    },
+    {
+      "request_no": "REQ-037",
+      "request_date": "2025-09-25T00:00:00",
+      "asset_name": "정밀 +드라이버",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 5개 -> 1개 여분"
+    },
+    {
+      "request_no": "REQ-038",
+      "request_date": "2025-09-25T00:00:00",
+      "asset_name": "정밀 -드라이버",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 4개 -> 1개 여분"
+    },
+    {
+      "request_no": "REQ-039",
+      "request_date": "2025-09-25T00:00:00",
+      "asset_name": "다목적 가위",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 3개 -> 1개 여분"
+    },
+    {
+      "request_no": "REQ-040",
+      "request_date": "2025-09-26T00:00:00",
+      "asset_name": "손전등",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 3개 -> 1개 여분"
+    },
+    {
+      "request_no": "REQ-041",
+      "request_date": "2025-09-29T00:00:00",
+      "asset_name": "활선경보기 (HXW-6W)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "request_no": "REQ-042",
+      "request_date": "2025-09-29T00:00:00",
+      "asset_name": "활선접근경보기 (TK-808A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "request_no": "REQ-043",
+      "request_date": "2025-09-30T00:00:00",
+      "asset_name": "안전담당자 완장",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "request_no": "REQ-044",
+      "request_date": "2025-10-14T00:00:00",
+      "asset_name": "활선접근경보기 (TK-808A)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 2개"
+    },
+    {
+      "request_no": "REQ-045",
+      "request_date": "2025-10-15T00:00:00",
+      "asset_name": "활선경보기 (HXW-6W)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 작업용 / 4개"
+    },
+    {
+      "request_no": "REQ-046",
+      "request_date": "2025-08-29T00:00:00",
+      "asset_name": "스마트 드라이버 노드 (RDS-DRV-1)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 테스트 장비 / 제조사: SYSWIN / S/N: SW-SD-2025102301"
+    },
+    {
+      "request_no": "REQ-047",
+      "request_date": "2025-08-29T00:00:00",
+      "asset_name": "스마트 드라이버 IO48포트 (RDS-IO48B-1)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 테스트 장비 / 제조사: SYSWIN / S/N: SW-IO48-2025102801"
+    },
+    {
+      "request_no": "REQ-048",
+      "request_date": "2025-08-29T00:00:00",
+      "asset_name": "가스트론 가스 감지기 (GTD-5000)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 테스트 장비 / 제조사: 가스트론 / S/N: AOGK2211296"
+    },
+    {
+      "request_no": "REQ-049",
+      "request_date": "2025-08-29T00:00:00",
+      "asset_name": "가스트론 가스 감지기 (GTD-5000)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 테스트 장비 / 제조사: 가스트론 / S/N: AOGK2211294"
+    },
+    {
+      "request_no": "REQ-050",
+      "request_date": "2025-08-29T00:00:00",
+      "asset_name": "GDS 가스 감지기 (ASGD-S)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 테스트 장비 / 제조사: GDS / S/N: ORG.0091"
+    },
+    {
+      "request_no": "REQ-051",
+      "request_date": "2025-08-29T00:00:00",
+      "asset_name": "GDS 가스 감지기 (ASGD-S)",
+      "manager": "김용민",
+      "location": "망포사무실",
+      "notes": "용도: 테스트 장비 / 제조사: GDS / S/N: ORG-0466"
+    },
+    {
+      "request_no": "REQ-052",
+      "request_date": "2026-02-16T00:00:00",
+      "asset_name": "클린용지",
+      "manager": "",
+      "location": "망포사무실",
+      "notes": "10묶음"
+    },
+    {
+      "request_no": "REQ-053",
+      "request_date": "2026-02-16T00:00:00",
+      "asset_name": "SOP현황판",
+      "manager": "",
+      "location": "망포사무실",
+      "notes": "용도: 작업용"
+    },
+    {
+      "request_no": "REQ-054",
+      "request_date": "2026-02-16T00:00:00",
+      "asset_name": "SOP현황판",
+      "manager": "",
+      "location": "망포사무실",
+      "notes": "용도: 작업용"
+    },
+    {
+      "request_no": "REQ-055",
+      "request_date": "2026-05-22T00:00:00",
+      "asset_name": "식별띠 : 평택 방재그룹 (5061~5070)",
+      "manager": "강동우",
+      "location": "망포사무실",
+      "notes": "용도: 삼성 라인 / 10묶음"
+    },
+    {
+      "request_no": "REQ-056",
+      "request_date": "2026-05-22T00:00:00",
+      "asset_name": "식별띠 : 평택 건설그룹 (5001~5010)",
+      "manager": "강동우",
+      "location": "망포사무실",
+      "notes": "용도: 삼성 라인 / 10묶음"
+    },
+    {
+      "request_no": "REQ-057",
+      "request_date": "2026-05-22T00:00:00",
+      "asset_name": "제전가방(백팩형)",
+      "manager": "강동우",
+      "location": "망포사무실",
+      "notes": "용도: 삼성 라인 / 2ea (1개사용_강동우)"
+    }
+  ],
+  "checkouts": []
+}
