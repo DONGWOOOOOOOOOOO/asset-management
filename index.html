@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>사무실 자산관리</title>
+<link rel="icon" type="image/png" href="./logo.png">
 <link rel="stylesheet" href="style.css">
 <style>
 [hidden] {
@@ -105,7 +106,7 @@
 <div id="appShell">
   <header class="topbar">
     <div class="topbar-identity">
-      <span class="mobile-brand-mark" aria-hidden="true">▣</span>
+      <img class="topbar-logo" src="./logo.png" alt="자산관리 로고" onerror="this.hidden=true">
       <div class="topbar-title">자산관리 시스템 <small>OFFICE ASSET MANAGER</small></div>
     </div>
     <div class="topbar-right">
@@ -117,7 +118,7 @@
   </header>
   <div class="workspace">
     <aside class="sidebar" aria-label="자산관리 메뉴">
-      <div class="side-brand"><span class="brand-symbol" aria-hidden="true">◈</span><span>자산관리 시스템<small>ASSET MANAGEMENT</small></span></div>
+      <div class="side-brand"><img class="side-brand-logo" src="./logo.png" alt="자산관리 로고" onerror="this.hidden=true"><span class="side-brand-fallback" aria-hidden="true">A</span><span class="side-brand-text">자산관리 시스템<small>ASSET MANAGEMENT</small></span></div>
       <div class="side-caption">WORKSPACE</div>
       <nav id="tabs" aria-label="주요 메뉴">
         <button class="tab active" data-tab="assets"><span class="nav-icon" aria-hidden="true">▤</span>자산대장</button>
@@ -145,5 +146,3 @@
 <dialog id="nameDialog"><form method="dialog"><h2>사용자 표시 이름</h2><p class="muted">수정 이력에 표시할 이름을 입력하세요. 현재 로그인 방식은 익명 로그인입니다.</p><input id="displayName" maxlength="40" placeholder="예: 홍길동" required><div class="dialog-actions"><button type="button" id="nameClose" class="btn secondary">닫기</button><button id="nameSave" class="btn primary" value="default">확인</button></div></form></dialog>
 <script src="app.js"></script>
 </body></html>
-
-
