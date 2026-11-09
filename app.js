@@ -5,8 +5,8 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const $ = s => document.querySelector(s);
 let db=null,user=null,profile=null,tab="assets",initialData=null;
 let cache={assets:[],requests:[],checkouts:[],history:[],profiles:[]};
-const labels={assets:["자산번호","자산명","담당자","보관장소","상태","반출자","반출일","비고"],requests:["신청번호","신청일","자산명","담당자","보관장소","비고"],checkouts:["반출번호","자산번호","반출자","반출일","예정반납일","실제반납일","비고"]};
-const fields={assets:[["asset_name","자산명"],["manager","담당자"],["location","보관장소"],["notes","비고"]],requests:[["request_date","신청일","date"],["asset_name","자산명"],["manager","담당자"],["location","보관장소"],["notes","비고"]],checkouts:[["asset_no","자산번호","select"],["borrower","반출자"],["checkout_date","반출일","date"],["due_date","예정반납일","date"],["returned_date","실제반납일","date"],["notes","비고"]]};
+const labels={assets:["자산번호","자산명","담당자","보관장소","상태","반출자","반출일","비고"],requests:["신청번호","신청일","자산명","신청자","수량","보관장소","비고"],checkouts:["반출번호","자산번호","반출자","반출일","예정반납일","실제반납일","비고"]};
+const fields={assets:[["asset_name","자산명"],["manager","담당자"],["location","보관장소"],["notes","비고"]],requests:[["request_date","신청일","date"],["asset_name","자산명"],["manager","신청자"],["quantity","수량","number"],["location","보관장소"],["notes","비고"]],checkouts:[["asset_no","자산번호","select"],["borrower","반출자"],["checkout_date","반출일","date"],["due_date","예정반납일","date"],["returned_date","실제반납일","date"],["notes","비고"]]};
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const isAdmin=()=>profile?.role==="admin";
 const canEdit=()=>["admin","editor"].includes(profile?.role);
@@ -226,6 +226,7 @@ function render(){
  $("#summary").innerHTML=[["전체 자산",a.length],["보관중",a.length-out],["반출중",out],["등록 사용자",isAdmin()?cache.profiles.length:"—"]].map(x=>`<div class="stat"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join("");
  $("#tabs").querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
  $("#addBtn").style.display=(tab==="history"||tab==="users"||!canEdit())?"none":"inline-block";
+ $("#requestTemplateBtn").style.display=tab==="requests"?"inline-block":"none";
  const q=$("#search").value.toLowerCase();
  if(tab==="users"){if(!isAdmin()){tab="assets";render();return}renderUsers(cache.profiles.filter(x=>JSON.stringify(x).toLowerCase().includes(q)));return}
  if(tab==="history"){if(!isAdmin()){tab="assets";render();return}renderHistory(cache.history.filter(x=>JSON.stringify(x).toLowerCase().includes(q)));return}
@@ -235,9 +236,9 @@ function render(){
  $("#tableArea").querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>removeRow(tab,b.dataset.del));
 }
 function rowHtml(x){
- const cells=tab==="assets"?[x.asset_no,x.asset_name,x.manager,x.location,`<span class="status ${x.status==="반출중"?"out":""}">${esc(x.status)}</span>`,x.borrower,x.checkout_date,x.notes]:tab==="requests"?[x.request_no,x.request_date,x.asset_name,x.manager,x.location,x.notes]:[x.checkout_no,x.asset_no,x.borrower,x.checkout_date,x.due_date,x.returned_date,x.notes];
+ const cells=tab==="assets"?[x.asset_no,x.asset_name,x.manager,x.location,`<span class="status ${x.status==="반출중"?"out":""}">${esc(x.status)}</span>`,x.borrower,x.checkout_date,x.notes]:tab==="requests"?[x.request_no,x.request_date,x.asset_name,x.manager,x.quantity,x.location,x.notes]:[x.checkout_no,x.asset_no,x.borrower,x.checkout_date,x.due_date,x.returned_date,x.notes];
  let actions=canEdit()?`<button data-edit="${esc(x.id)}">수정</button> `:"";if(isAdmin())actions+=`<button data-del="${esc(x.id)}">삭제</button>`;
- return `<tr>${cells.map(v=>`<td>${v===undefined?"":String(v).startsWith("<span")?v:esc(v)}</td>`).join("")}<td class="row-actions">${actions||"—"}</td></tr>`;
+ return `<tr>${cells.map(v=>`<td>${v===undefined||v===null?"":String(v).startsWith("<span")?v:esc(v)}</td>`).join("")}<td class="row-actions">${actions||"—"}</td></tr>`;
 }
 function renderHistory(rows){$("#tableArea").innerHTML=rows.length?`<table><thead><tr><th>일시</th><th>사용자</th><th>작업</th><th>대상</th><th>변경 요약</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${new Date(x.created_at).toLocaleString("ko-KR")}</td><td>${esc(x.actor_name||"사용자")}</td><td>${esc(x.action)}</td><td>${esc(x.table_name)}</td><td>${esc(x.summary||"")}</td></tr>`).join("")}</tbody></table>`:'<div class="empty">수정 이력이 없습니다.</div>'}
 function renderUsers(rows){
@@ -255,14 +256,31 @@ function openEdit(t,id=null){
  if(!canEdit()){alert("수정 권한이 없습니다.");return}
  const item=id?(cache[t]||[]).find(x=>x.id===id):{};
  $("#dialogTitle").textContent=(id?"정보 수정":"신규 등록")+" · "+({assets:"자산",requests:"자산 신청",checkouts:"자산 반출"}[t]);
- $("#formFields").innerHTML=fields[t].map(([key,label,type])=>{const val=item?.[key]||"";if(type==="select")return `<label class="field">${label}<select name="${key}">${cache.assets.map(a=>`<option value="${esc(a.asset_no)}" ${a.asset_no===val?"selected":""}>${esc(a.asset_no+" · "+a.asset_name)}</option>`).join("")}</select></label>`;return `<label class="field ${key==="notes"?"full":""}">${label}<input name="${key}" type="${type||"text"}" value="${esc(val)}" ${["asset_name","borrower","checkout_date","due_date"].includes(key)?"required":""}></label>`}).join("");
+ $("#formFields").innerHTML=fields[t].map(([key,label,type])=>{const val=item?.[key]??(key==="quantity"?1:"");if(type==="select")return `<label class="field">${label}<select name="${key}">${cache.assets.map(a=>`<option value="${esc(a.asset_no)}" ${a.asset_no===val?"selected":""}>${esc(a.asset_no+" · "+a.asset_name)}</option>`).join("")}</select></label>`;return `<label class="field ${key==="notes"?"full":""}">${label}<input name="${key}" type="${type||"text"}" value="${esc(val)}" ${["asset_name","borrower","checkout_date","due_date","quantity"].includes(key)?"required":""} ${key==="quantity"?'min="1" step="1"':""}></label>`}).join("");
  $("#editDialog").showModal();
  $("#saveDialog").onclick=async e=>{e.preventDefault();try{await saveRow(t,id,Object.fromEntries(new FormData($("#editForm")).entries()));$("#editDialog").close()}catch(err){alert("저장 실패: "+err.message)}};
 }
+function nextRequestNumber(usedNumbers=null){
+ const used=usedNumbers||new Set(cache.requests.map(x=>String(x.request_no||"")));
+ let max=0;
+ for(const row of cache.requests){
+  const match=String(row.request_no||"").match(/^REQ-(\d+)$/i);
+  if(match)max=Math.max(max,Number(match[1]));
+ }
+ let next=max+1;
+ let candidate="REQ-"+String(next).padStart(3,"0");
+ while(used.has(candidate)){next++;candidate="REQ-"+String(next).padStart(3,"0");}
+ return candidate;
+}
+
 async function saveRow(t,id,d){
  if(!canEdit())throw Error("수정 권한이 없습니다.");
  if(t==="assets"&&!id){d.asset_no="AS-"+String(Math.max(0,...cache.assets.map(x=>Number((x.asset_no||"").split("-")[1])||0))+1).padStart(3,"0");d.status="보관중"}
- if(t==="requests"&&!id)d.request_no="REQ-"+String(cache.requests.length+1).padStart(3,"0");
+ if(t==="requests"){
+  d.quantity=Number.parseInt(d.quantity,10);
+  if(!Number.isInteger(d.quantity)||d.quantity<1)throw Error("수량은 1 이상의 정수로 입력하세요.");
+  if(!id)d.request_no=nextRequestNumber();
+ }
  if(t==="checkouts"){
   // 실제 반납일은 반출 등록 시 비워둘 수 있습니다.
   d.returned_date=d.returned_date||null;
@@ -339,6 +357,107 @@ $("#nameSave").onclick=async e=>{
     alert("이름 등록 실패: "+err.message);
   }finally{btn.disabled=false;}
 };
+function latestRequestSequence(){
+ let max=0;
+ for(const row of cache.requests){
+  const match=String(row.request_no||"").match(/^REQ-(\d+)$/i);
+  if(match)max=Math.max(max,Number(match[1]));
+ }
+ return max+1;
+}
+
+function downloadRequestTemplate(){
+ const wb=XLSX.utils.book_new();
+ const headers=["신청번호","신청자","신청일","자산명","수량","비고"];
+ const rows=[headers];
+ for(let i=0;i<100;i++)rows.push(["","","","","",""]);
+ const ws=XLSX.utils.aoa_to_sheet(rows);
+ const first=latestRequestSequence();
+ for(let row=2;row<=101;row++){
+  const cell="A"+row;
+  ws[cell]={t:"str",f:`IF(D${row}<>"","REQ-"&TEXT(COUNTA($D$2:D${row})+${first-1},"000"),"")`};
+ }
+ ws["!cols"]=[{wch:16},{wch:18},{wch:15},{wch:28},{wch:10},{wch:30}];
+ ws["!autofilter"]={ref:"A1:F101"};
+ ws["!freeze"]={xSplit:0,ySplit:1,topLeftCell:"A2",activePane:"bottomLeft",state:"frozen"};
+ XLSX.utils.book_append_sheet(wb,ws,"자산신청");
+ const guide=XLSX.utils.aoa_to_sheet([
+  ["작성 안내"],
+  ["자산명을 입력하면 신청번호가 REQ-001 형식으로 자동 표시됩니다."],
+  ["신청번호 열은 자동 계산되므로 직접 수정하지 마세요."],
+  ["신청자, 신청일, 자산명, 수량, 비고를 작성한 뒤 저장하고 웹페이지에서 업로드하세요."],
+  ["신청일은 YYYY-MM-DD 형식으로 입력하는 것을 권장합니다."],
+  ["수량은 1 이상의 정수로 입력하세요."]
+ ]);
+ guide["!cols"]=[{wch:95}];
+ XLSX.utils.book_append_sheet(wb,guide,"작성안내");
+ wb.Workbook=wb.Workbook||{};
+ wb.Workbook.CalcPr={calcMode:"auto",fullCalcOnLoad:true,forceFullCalc:true};
+ XLSX.writeFile(wb,"신규_자산신청_양식.xlsx");
+}
+
+$("#requestTemplateBtn").onclick=downloadRequestTemplate;
+
 $("#exportBtn").onclick=()=>{const wb=XLSX.utils.book_new();for(const [t,rows] of [["자산대장",cache.assets],["자산신청",cache.requests],["자산반출",cache.checkouts]]){const clean=rows.map(({id,created_at,updated_at,...r})=>r);XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(clean),t)}XLSX.writeFile(wb,"사무실_자산관리_내보내기.xlsx")};
-$("#importFile").onchange=async e=>{const file=e.target.files[0];if(!file)return;if(!canEdit()){alert("업로드 권한이 없습니다.");e.target.value="";return}try{const buf=await file.arrayBuffer(),book=XLSX.read(buf,{cellDates:true}),sheetName=book.SheetNames.includes("자산신청")?"자산신청":book.SheetNames[0],data=XLSX.utils.sheet_to_json(book.Sheets[sheetName],{defval:"",range:sheetName==="자산신청"?2:0}),valid=data.filter(r=>r["자산명"]||r["asset_name"]);if(!confirm(`${valid.length}개 행을 자산신청으로 추가할까요? 기존 데이터는 삭제하지 않습니다.`))return;for(let i=0;i<valid.length;i++){const r=valid[i],name=r["자산명"]||r["asset_name"];if(!name)continue;let dt=r["신청일"]||r["request_date"]||today();if(dt instanceof Date)dt=dt.toISOString().slice(0,10);else if(typeof dt==="number"){const p=XLSX.SSF.parse_date_code(dt);dt=p?`${p.y}-${String(p.m).padStart(2,"0")}-${String(p.d).padStart(2,"0")}`:today()}const {error}=await db.from("requests").insert({request_no:"REQ-IMP-"+Date.now().toString().slice(-7)+"-"+i,request_date:dt,asset_name:name,manager:r["담당자"]||r.manager||"",location:r["보관장소"]||r.location||"",notes:r["비고"]||r.notes||""});if(error)throw error}await loadAll();alert("업로드가 완료되었습니다.")}catch(err){alert("업로드 실패: "+err.message)}e.target.value=""};
+
+$("#importFile").onchange=async e=>{
+ const file=e.target.files[0];
+ if(!file)return;
+ if(!canEdit()){alert("업로드 권한이 없습니다.");e.target.value="";return;}
+ try{
+  const buf=await file.arrayBuffer();
+  const book=XLSX.read(buf,{cellDates:true});
+  const sheetName=book.SheetNames.includes("자산신청")?"자산신청":book.SheetNames[0];
+  const sheet=book.Sheets[sheetName];
+  const matrix=XLSX.utils.sheet_to_json(sheet,{header:1,defval:""});
+  const headerIndex=matrix.findIndex(row=>row.some(v=>["자산명","asset_name"].includes(String(v).trim())));
+  if(headerIndex<0)throw Error("자산명 열이 있는 신청 양식을 찾을 수 없습니다.");
+  const data=XLSX.utils.sheet_to_json(sheet,{defval:"",range:headerIndex});
+  const valid=data.filter(r=>String(r["자산명"]||r.asset_name||"").trim());
+  if(!valid.length){alert("자산명이 입력된 신청 행이 없습니다.");return;}
+  if(!confirm(`${valid.length}개 행을 신규 자산신청으로 추가할까요? 기존 데이터는 삭제하지 않습니다.`))return;
+
+  const used=new Set(cache.requests.map(x=>String(x.request_no||"")));
+  let next=latestRequestSequence();
+  for(let i=0;i<valid.length;i++){
+   const r=valid[i];
+   const name=String(r["자산명"]||r.asset_name||"").trim();
+   if(!name)continue;
+   let dt=r["신청일"]||r.request_date||today();
+   if(dt instanceof Date)dt=dt.toISOString().slice(0,10);
+   else if(typeof dt==="number"){
+    const parsed=XLSX.SSF.parse_date_code(dt);
+    dt=parsed?`${parsed.y}-${String(parsed.m).padStart(2,"0")}-${String(parsed.d).padStart(2,"0")}`:today();
+   }else if(!/^\d{4}-\d{2}-\d{2}$/.test(String(dt)))dt=today();
+   let requestNo=String(r["신청번호"]||r.request_no||"").trim();
+   if(!/^REQ-\d{3,}$/i.test(requestNo)||used.has(requestNo)){
+    requestNo="REQ-"+String(next).padStart(3,"0");
+    while(used.has(requestNo)){next++;requestNo="REQ-"+String(next).padStart(3,"0");}
+   }
+   used.add(requestNo);
+   const applicant=String(r["신청자"]||r["담당자"]||r.manager||"").trim();
+   const rawQty=r["수량"]??r.quantity??1;
+   const quantity=Number.parseInt(rawQty,10);
+   if(!Number.isInteger(quantity)||quantity<1)throw Error(`${name}: 수량은 1 이상의 정수로 입력하세요.`);
+   const notes=String(r["비고"]||r.notes||"").trim();
+   const {error}=await db.from("requests").insert({
+    request_no:requestNo,
+    request_date:String(dt),
+    asset_name:name,
+    manager:applicant,
+    quantity,
+    location:String(r["보관장소"]||r.location||""),
+    notes
+   });
+   if(error)throw error;
+   const match=requestNo.match(/^REQ-(\d+)$/i);
+   if(match)next=Math.max(next,Number(match[1])+1);
+  }
+  await loadAll();
+  alert("신규 자산 신청 업로드가 완료되었습니다.");
+ }catch(err){
+  console.error(err);
+  alert("업로드 실패: "+(err.message||"알 수 없는 오류"));
+ }finally{e.target.value="";}
+};
 start();
