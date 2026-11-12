@@ -304,17 +304,44 @@ async function saveRow(t,id,d){
  }
  await loadAll();
 }
+// 자산대장/신청은 request_no 로만 연동합니다. 이름이 같은 항목은 연동하지 않습니다.
 async function removeRow(t,id){
  if(!isAdmin()){alert("삭제는 관리자만 할 수 있습니다.");return;}
- if(t==="assets"||t==="checkouts"){
+ if(t==="assets"||t==="requests"){
   const row=(cache[t]||[]).find(x=>x.id===id);
+  if(!row){alert("삭제할 내역을 찾을 수 없습니다.");return;}
+  const requestNo=String(row.request_no||"").trim();
+  const candidates=t==="assets"
+   ?cache.requests.filter(x=>requestNo&&x.request_no===requestNo)
+   :cache.assets.filter(x=>requestNo&&x.request_no===requestNo);
+  const requestMatches=cache.requests.filter(x=>requestNo&&x.request_no===requestNo);
+  const assetMatches=cache.assets.filter(x=>requestNo&&x.request_no===requestNo);
+  if(requestNo&&(requestMatches.length>1||assetMatches.length>1)){
+   alert(`신청번호 ${requestNo}가 중복되어 연결 대상을 정확히 확인할 수 없습니다. 삭제하지 않았습니다.`);
+   return;
+  }
+  const partner=candidates[0];
+  const asset=t==="assets"?row:partner;
+  const checkoutCount=asset?cache.checkouts.filter(x=>x.asset_no===asset.asset_no).length:0;
+  const currentLabel=t==="assets"?`자산 ${row.asset_no}`:`신청 ${row.request_no||"(번호 없음)"}`;
+  const linkedLabel=partner?(t==="assets"?`연결된 신청 ${partner.request_no}`:`연결된 자산 ${partner.asset_no}`):"연결된 반대편 항목 없음";
+  const explanation=`${currentLabel} 삭제\n${linkedLabel}${checkoutCount?`\n관련 반출 기록 ${checkoutCount}건도 삭제됩니다.`:""}\n\n신청번호가 정확히 일치하는 항목만 연동하며 복구가 어려울 수 있습니다. 계속할까요?`;
+  if(!confirm(explanation))return;
+  const {error}=await db.rpc("admin_delete_linked_asset_request",{target_table:t,target_id:id});
+  if(error){alert("삭제 실패: "+error.message+"\nSQL migration 적용 및 신청번호 중복 여부를 확인하세요.");return;}
+  await loadAll();
+  msg(`${currentLabel} 삭제를 완료했습니다. ${linkedLabel}.`);
+  return;
+ }
+ if(t==="checkouts"){
+  // 기존 자산반출 연동 삭제 로직을 유지합니다.
+  const row=(cache.checkouts||[]).find(x=>x.id===id);
   if(!row){alert("선택한 내역을 찾을 수 없습니다.");return;}
   const assetNo=row.asset_no;
   const related=cache.checkouts.filter(x=>x.asset_no===assetNo).length;
-  if(!confirm(`자산번호 ${assetNo}의 자산대장 1건과 연결된 반출 기록 ${related}건을 모두 삭제할까요?\n삭제 후 두 목록에서 해당 자산이 사라집니다. 이 작업은 되돌릴 수 없습니다.`))return;
-  // 관리자 인증을 검사하는 데이터베이스 함수가 두 테이블을 한 트랜잭션에서 정리합니다.
+  if(!confirm(`자산번호 ${assetNo}의 자산대장 1건과 연결된 반출 기록 ${related}건을 모두 삭제할까요?\n이 작업은 되돌릴 수 없습니다.`))return;
   const {error}=await db.rpc("admin_delete_asset_and_checkouts",{target_table:t,target_id:id});
-  if(error){alert("연동 삭제 실패: "+error.message+"\nSupabase의 migration_관리자_이력_연동삭제.sql 적용 여부를 확인하세요.");return;}
+  if(error){alert("연동 삭제 실패: "+error.message);return;}
   await loadAll();
   msg(`자산번호 ${assetNo} 관련 자산대장 및 반출 기록을 삭제했습니다.`);
   return;
