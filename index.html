@@ -132,7 +132,13 @@
       <div class="page-heading"><div><div class="eyebrow">OVERVIEW</div><h1>자산 관리 대시보드</h1><p>사무실 자산 현황을 한눈에 확인하고 효율적으로 관리하세요.</p></div><div class="heading-chip">OFFICE OPERATIONS</div></div>
       <section class="summary" id="summary" aria-label="자산 현황"></section>
       <section class="panel">
-        <div class="panel-heading"><div><div class="eyebrow">ASSET MANAGEMENT</div><h2>자산 관리 목록</h2></div><div class="top-actions"><button id="exportBtn" class="btn secondary">↓ 엑셀 다운로드</button><button id="requestTemplateBtn" class="btn secondary" style="display:none">↓ 신청 양식 다운로드</button><label class="btn secondary filebtn" id="importLabel">↑ 엑셀 업로드<input id="importFile" type="file" accept=".xlsx,.xls,.csv"></label></div></div>
+        <div class="panel-heading"><div><div class="eyebrow">ASSET MANAGEMENT</div><h2>자산 관리 목록</h2></div><div class="top-actions">
+          <button id="exportBtn" type="button" class="btn secondary">↓ 엑셀 다운로드</button>
+          <button id="requestTemplateBtn" type="button" class="btn secondary" style="display:inline-block">↓ 신청 양식 다운로드</button>
+          <label class="btn secondary filebtn" id="importLabel">↑ 엑셀 업로드
+            <input id="importFile" type="file" accept=".xlsx,.xls,.csv">
+          </label>
+        </div></div>
         <div class="toolbar"><div class="tools"><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" aria-label="자산 검색" placeholder="자산명 · 번호 · 담당자 검색"></div><button id="addBtn" class="btn primary">＋ 신규 등록</button></div></div>
         <div id="notice" class="notice">Supabase 연결 정보를 설정하면 여러 기기에서 실시간 공동 편집할 수 있습니다.</div>
         <div id="tableArea" class="table-area"><div class="empty">초기 화면을 준비하고 있습니다.</div></div>
